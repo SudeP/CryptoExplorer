@@ -1,8 +1,11 @@
-﻿using BTC.Interfaces;
+﻿using BTC.Attributes;
+using BTC.Interfaces;
+using BTC.Tools;
 using BTC.Typies;
 
 namespace BTC.Models
 {
+    [DbName(Statics.BTCDbName)]
     public partial class SpendingOutpoint : CountableJsonObject<SpendingOutpoint>, IBlockChildObject
     {
         public long ParentId { get; set; }

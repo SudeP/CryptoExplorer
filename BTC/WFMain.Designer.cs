@@ -32,6 +32,7 @@
             // WFMain
             // 
             this.Name = "WFMain";
+            this.Load += new System.EventHandler(this.WFMain_Load);
 
         }
 

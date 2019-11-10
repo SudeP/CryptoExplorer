@@ -1,10 +1,13 @@
-﻿using BTC.Typies;
+﻿using BTC.Attributes;
+using BTC.Tools;
+using BTC.Typies;
 using MongoDB.Bson;
 using System;
 
 namespace BTC.Models
 {
-    public class Block : CountableJsonObject<Block>
+    [DbName(Statics.BTCDbName)]
+    public partial class Block : CountableJsonObject<Block>
     {
         public long BlockId { get; set; }
         public BsonInt64 BlockHash { get; set; }

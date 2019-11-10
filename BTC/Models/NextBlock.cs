@@ -1,8 +1,11 @@
-﻿using BTC.Typies;
+﻿using BTC.Attributes;
+using BTC.Tools;
+using BTC.Typies;
 
 namespace BTC.Models
 {
-    public class NextBlock : CountableJsonObject<NextBlock>
+    [DbName(Statics.BTCDbName)]
+    public partial class NextBlock : CountableJsonObject<NextBlock>
     {
         public string BlockHash { get; set; }
     }

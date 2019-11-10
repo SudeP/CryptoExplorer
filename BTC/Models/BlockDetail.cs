@@ -1,9 +1,12 @@
-﻿using BTC.Typies;
+﻿using BTC.Attributes;
+using BTC.Tools;
+using BTC.Typies;
 using System.Collections.Generic;
 
 namespace BTC.Models
 {
-    public class BlockDetail : CountableJsonObject<BlockDetail>
+    [DbName(Statics.BTCDbName)]
+    public partial class BlockDetail : CountableJsonObject<BlockDetail>
     {
         public string BlockHash { get; set; }
         public long TxCount { get; set; }

@@ -1,10 +1,13 @@
-﻿using BTC.Interfaces;
+﻿using BTC.Attributes;
+using BTC.Interfaces;
+using BTC.Tools;
 using BTC.Typies;
 using System.Collections.Generic;
 
 namespace BTC.Models
 {
-    public class Tx : CountableJsonObject<Tx>, IBlockChildObject
+    [DbName(Statics.BTCDbName)]
+    public partial class Tx : CountableJsonObject<Tx>, IBlockChildObject
     {
         public long ParentId { get; set; }
         public long BlockId { get; set; }
