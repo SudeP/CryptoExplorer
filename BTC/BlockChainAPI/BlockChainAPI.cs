@@ -20,11 +20,21 @@ namespace BTC.BlockChainAPI
             httpStatusCode = response.StatusCode;
             return response.Content;
         }
-        public static string GetSingleTransaction(string txHash, out HttpStatusCode httpStatusCode)
+        public static string GetBlockToHeight(long blockHeight, out HttpStatusCode httpStatusCode)
         {
             RestRequest request = new RestRequest
             {
-                Resource = $@"/rawtx/{txHash}"
+                Resource = $@"/block-height/{blockHeight}?format=json"
+            };
+            RestResponse response = client.Execute(request) as RestResponse;
+            httpStatusCode = response.StatusCode;
+            return response.Content;
+        }
+        public static string GetLatestBlocks(out HttpStatusCode httpStatusCode)
+        {
+            RestRequest request = new RestRequest
+            {
+                Resource = $@"/block-height/?format=json"
             };
             RestResponse response = client.Execute(request) as RestResponse;
             httpStatusCode = response.StatusCode;
