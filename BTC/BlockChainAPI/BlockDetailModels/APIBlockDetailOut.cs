@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BTC.BlockChainAPI.BlockDetailModels
 {
-    public partial class APIOut
+    public partial class APIBlockDetailOut
     {
         [BsonElement("type")]
         public long Type { get; set; }
@@ -15,7 +15,7 @@ namespace BTC.BlockChainAPI.BlockDetailModels
         public long Value { get; set; }
 
         [BsonElement("spending_outpoints")]
-        public List<APISpendingOutpoint> SpendingOutpoints { get; set; }
+        public List<APIBlockDetailSpendingOutpoint> SpendingOutpoints { get; set; }
 
         [BsonElement("tx_index")]
         public long TxIndex { get; set; }

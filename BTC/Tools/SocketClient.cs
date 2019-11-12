@@ -8,6 +8,7 @@ namespace BTC.Tools
 {
     public class SocketClient
     {
+        public static readonly Encoding DefaultEncoding = Encoding.UTF8;
         public event EventHandler Exception;
         private readonly int port;
         private readonly IPAddress ipAddress;
@@ -59,7 +60,7 @@ namespace BTC.Tools
             }
             catch (Exception e)
             {
-                Exception(e, null);
+                Exception?.Invoke(e, null);
                 return -1;
             }
         }

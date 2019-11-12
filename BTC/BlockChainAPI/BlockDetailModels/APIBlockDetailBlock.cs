@@ -43,7 +43,7 @@ namespace BTC.BlockChainAPI.BlockDetailModels
         public long Weight { get; set; }
 
         [BsonElement("tx")]
-        public List<APITx> Tx { get; set; }
+        public List<APIBlockDetailTx> Tx { get; set; }
 
         [BsonElement("hash")]
         public string Hash { get; set; }

@@ -2,7 +2,7 @@
 
 namespace BTC.BlockChainAPI.BlockDetailModels
 {
-    public partial class APIInput
+    public partial class APIBlockDetailInput
     {
         [BsonElement("sequence")]
         public long Sequence { get; set; }
@@ -17,9 +17,9 @@ namespace BTC.BlockChainAPI.BlockDetailModels
         public long Index { get; set; }
 
         [BsonElement("prev")]
-        public APIOut Prev { get; set; }
+        public APIBlockDetailOut Prev { get; set; }
 
         [BsonElement("prev_out")]
-        public APIOut PrevOut { get; set; }
+        public APIBlockDetailOut PrevOut { get; set; }
     }
 }

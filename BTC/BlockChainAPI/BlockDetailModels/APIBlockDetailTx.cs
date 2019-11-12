@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BTC.BlockChainAPI.BlockDetailModels
 {
-    public partial class APITx
+    public partial class APIBlockDetailTx
     {
         [BsonElement("hash")]
         public string Hash { get; set; }
@@ -54,10 +54,10 @@ namespace BTC.BlockChainAPI.BlockDetailModels
         public long BlockHeight { get; set; }
 
         [BsonElement("inputs")]
-        public List<APIInput> Inputs { get; set; }
+        public List<APIBlockDetailInput> Inputs { get; set; }
 
         [BsonElement("out")]
-        public List<APIOut> Out { get; set; }
+        public List<APIBlockDetailOut> Out { get; set; }
 
         [BsonElement("rbf")]
         public bool? Rbf { get; set; }

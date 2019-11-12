@@ -2,7 +2,7 @@
 
 namespace BTC.BlockChainAPI.BlockDetailModels
 {
-    public partial class APISpendingOutpoint
+    public partial class APIBlockDetailSpendingOutpoint
     {
         [BsonElement("tx_index")]
         public long TxIndex { get; set; }

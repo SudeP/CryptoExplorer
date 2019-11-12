@@ -9,6 +9,7 @@ namespace BTC.Tools
 {
     public class SocketListener
     {
+        public static readonly Encoding DefaultEncoding = Encoding.UTF8;
         public event EventHandler Receive;
         public event EventHandler Exception;
         private bool isRunnig;
@@ -42,6 +43,10 @@ namespace BTC.Tools
         }
         public void Start()
         {
+            isRunnig = true;
+            listener = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            listener.Bind(ipEndPoint);
+            listener.Listen(10);
             Thread thread = new Thread(_Start);
             thread.Start();
         }
@@ -49,12 +54,9 @@ namespace BTC.Tools
         private void _Start()
 #pragma warning restore IDE1006 // Naming Styles
         {
+            xcontinue:
             try
             {
-                isRunnig = true;
-                listener = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-                listener.Bind(ipEndPoint);
-                listener.Listen(10);
                 handler = listener.Accept();
                 string data = null;
                 while (true)
@@ -66,7 +68,7 @@ namespace BTC.Tools
                     data += encoding.GetString(bytes, 0, bytesRec);
                     if (data.Length > 0)
                     {
-                        Receive(data, null);
+                        Receive?.Invoke(data, null);
                         handler = listener.Accept();
                         data = null;
                     }
@@ -74,8 +76,10 @@ namespace BTC.Tools
             }
             catch (Exception e)
             {
-                Exception(e, null);
+                Exception?.Invoke(e, null);
             }
+            if (isRunnig)
+                goto xcontinue;
         }
         public void Stop()
         {

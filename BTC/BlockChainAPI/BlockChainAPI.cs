@@ -10,7 +10,7 @@ namespace BTC.BlockChainAPI
         {
             BaseUrl = new Uri("https://blockchain.info")
         };
-        public static string GetBlockToHash(string blockHash, out HttpStatusCode httpStatusCode)
+        public static string GetBlockDetailToHash(string blockHash, out HttpStatusCode httpStatusCode)
         {
             RestRequest request = new RestRequest
             {
@@ -34,7 +34,7 @@ namespace BTC.BlockChainAPI
         {
             RestRequest request = new RestRequest
             {
-                Resource = $@"/block-height/?format=json"
+                Resource = $@"/blocks/?format=json"
             };
             RestResponse response = client.Execute(request) as RestResponse;
             httpStatusCode = response.StatusCode;
