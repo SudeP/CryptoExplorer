@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTC", "BTC\BTC.csproj", "{D32ABC57-1FAE-4326-909F-2FE6C39741A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockControl", "BlockControl\BlockControl.csproj", "{51FB3132-68D0-45C0-BCCC-28DCED646407}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlockControl", "BlockControl\BlockControl.csproj", "{51FB3132-68D0-45C0-BCCC-28DCED646407}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockControl_Manage", "BlockControl_Manage\BlockControl_Manage.csproj", "{61949B04-D796-46CA-9592-1109A9935749}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlockControl_Manage", "BlockControl_Manage\BlockControl_Manage.csproj", "{61949B04-D796-46CA-9592-1109A9935749}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
